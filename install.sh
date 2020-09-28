@@ -1,4 +1,4 @@
-
+#!/bin/sh
 echo "Téléchargement de la configuration docker"
 wget https://github.com/oracle/docker-images/archive/master.zip -q
 echo "Extraction"
