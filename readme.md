@@ -44,7 +44,7 @@ Dans sqldeveloper :
 - Créez une nouvelle connexion avec toute les options par défaut sauf : 
     - name : BD
     - Nom d’utilsateur : SYSTEM
-    - Mot de passe : passsword 
+    - Mot de passe : password 
 - Cliquez sur le bouton Connexion
 - normalement vous pouvez maintenant lancer les scripts et suivre les cours :)
 
