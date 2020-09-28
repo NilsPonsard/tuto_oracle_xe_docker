@@ -46,7 +46,7 @@ Dans sqldeveloper :
     - Nom d’utilsateur : SYSTEM
     - Mot de passe : password 
 - Cliquez sur le bouton Connexion
-- normalement vous pouvez maintenant lancer les scripts et suivre les cours :)
+- Normalement vous pouvez maintenant lancer les scripts et suivre les cours :)
 
 ## Commandes à utiliser
 - pour démarrer : `./run.sh`
