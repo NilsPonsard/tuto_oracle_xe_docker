@@ -9,6 +9,7 @@ cd docker-images-master/OracleDatabase/SingleInstance/dockerfiles/
 ./buildDockerImage.sh -x -v 18.4.0 >> log
 
 echo "Création de l’image termiée !"
+read -p -s "appuyez sur entrer pour continuer ..."
 echo "Configuration de data ... merci d’entrer votre mot de passe quand demandé"
 mkdir data
 sudo chown -R 54321:54321 data
