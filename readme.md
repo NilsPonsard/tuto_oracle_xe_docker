@@ -3,39 +3,50 @@
 ## Prérequis : 
 - une connaissance de base de linux et le shell
 - un accès root via sudo 
+- avoir `wget` d’installé sur la machine
 
 ## Étape 1 : installation de docker & docker-compose
 Veuillez vous réferer à la documentation de votre distribution pour installer `docker` et `docker-compose`  
-Sur arch linux et ses dérivés faire : 
+### Arch linux et ses dérivés : 
 ```
 $ sudo pacman -Syu docker docker-compose
 $ sudo gpasswd -a $USER docker
+$ sudo systemctl enable docker
 ```
-Puis redemmarez votre machine pour mettre à jour les groupes
+### Debian / Ubuntu : 
+```
+$ sudo apt update 
+$ sudo apt upgrade
+$ sudo apt install docker docker-compose
+$ sudo gpasswd -a $USER docker
+$ sudo systemctl enable docker
+```
+Puis redemmarez votre machine pour mettre à jour les groupes et que le service docker se lance 
 
 ## Étape 2 : création de l’image docker 
-- Télécharger l’archive (zip) ce repo : [https://github.com/oracle/docker-images](https://github.com/oracle/docker-images)
-- Extraire l’archive et se placer dans le répertoire `OracleDatabase/SingleInstance/dockerfiles`
-- Lancer le script avec les paramètres `./buildDockerImage.sh -x -v 18.4.0`
-- Attendre que le scrip finisse, le script télécharge oracle xe après avoir affiché  
+Lancer le script `install.sh` qui va créer sur votre machine une image docker avec oracle xe et va configurer le dossier pour oracle xe.  
+Le script peut prendre de 30 minutes à quelques heures en fonction de votre connexion internet.
+
+## Étape 3 : premier lancement 
+Utiliser le script `run.sh` pour lancer la base de donée, le premier lancement fera la configuration de la base de données qui prendra quelques minutes, pour voir l’avancement, utilisez `docker-compose logs bd-xe`.  
+Si vous voyez dans les logs : 
 ```
-Complete!
-Loaded plugins: ovl
+bd-xe_1  | #########################
+bd-xe_1  | DATABASE IS READY TO USE!
+bd-xe_1  | #########################
 ```
-Il faut être patient
-- normalement le script se termine avec un 
-```
-  Oracle Database Docker Image for 'xe' version 18.4.0 is ready to be extended: 
-    
-    --> oracle/database:18.4.0-xe
-
-  Build completed in 1352 seconds.
-```
-
-## Étape 3 : dossier de sauvegarde
-Pour sauvegarder l’état de la base de données même après avoir arrêté le conteneur il faut créer un dossier nommé data appartenant à l’utilisateur `oracle`. 
+Vous pouvez passer à l’étape suivante 
 
 
+## Étape 4 : connexion via sqldeveloper 
+Dans sqldeveloper : 
+- Créez une nouvelle connexion avec toute les options par défaut sauf : 
+    - name : BD
+    - Nom d’utilsateur : SYSTEM
+    - Mot de passe : passsword 
+- Cliquez sur le bouton Connexion
+- normalement vous pouvez maintenant lancer les scripts et suivre les cours :)
 
-## Étape 4 : docker-compose 
-Docker compose est un outil permettant de plus facilement lancer des images docker.
+## Commandes à utiliser
+- pour démarrer : `./run.sh`
+- pour arrêter la base de données : `./stop.sh`
