@@ -56,3 +56,9 @@ Dans sqldeveloper :
 ## Commandes à utiliser
 - pour démarrer : `./run.sh`
 - pour arrêter la base de données : `./stop.sh`
+
+## sqldeveloper sur un linux autre que Red Hat
++ installer java sur votre machine (`jre11-openjdk` pour arch et ses dérivés, `default-jre` pour debian et ubuntu)
++ télécharger la version "other platforms" ici : [https://www.oracle.com/tools/downloads/sqldev-downloads.html](https://www.oracle.com/tools/downloads/sqldev-downloads.html)
++ extraire l’archive téléchargée dans un dossier 
++ lancer `sqldeveloper.sh` dans ce dossier.
