@@ -1,6 +1,7 @@
 # installation d’oracle XE 18c sur linux grâce à docker 
 
 ## Prérequis : 
+- une version de linux récente installée sur la machine
 - une connaissance de base de linux et le shell
 - un accès root via sudo 
 - avoir `wget` et `unzip` d’installé sur la machine
