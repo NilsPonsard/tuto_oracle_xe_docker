@@ -3,7 +3,7 @@
 ## Prérequis : 
 - une connaissance de base de linux et le shell
 - un accès root via sudo 
-- avoir `wget` d’installé sur la machine
+- avoir `wget` et `unzip` d’installé sur la machine
 
 ## Étape 1 : installation de docker & docker-compose
 Veuillez vous réferer à la documentation de votre distribution pour installer `docker` et `docker-compose`  
@@ -21,7 +21,7 @@ $ sudo apt install docker docker-compose
 $ sudo gpasswd -a $USER docker
 $ sudo systemctl enable docker
 ```
-Puis redemmarez votre machine pour mettre à jour les groupes et que le service docker se lance 
+Puis redémmarez votre machine pour mettre à jour les groupes et que le service docker se lance 
 
 ## Étape 2 : création de l’image docker 
 Lancer le script `install.sh` qui va créer sur votre machine une image docker avec oracle xe et va configurer le dossier pour oracle xe.  
