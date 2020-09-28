@@ -6,6 +6,11 @@
 - un accès root via sudo 
 - avoir `wget` et `unzip` d’installé sur la machine
 
+## Étape 0 : récupération des fichiers 
+- télécharger l’archive de ce git ici : [https://github.com/NilsPonsard/tuto_oracle_xe_docker/archive/master.zip](https://github.com/NilsPonsard/tuto_oracle_xe_docker/archive/master.zip)
+- l’extraire les fichiers dans un dossier vide 
+- se placer (cd) dans le même répertoire qui contient les fichers `install.sh`, `run.sh`... Toutes les commandes seront à executer dans ce répertoire
+
 ## Étape 1 : installation de docker & docker-compose
 Veuillez vous référer à la documentation de votre distribution pour installer `docker` et `docker-compose`  
 ### Arch linux et ses dérivés : 
