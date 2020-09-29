@@ -7,7 +7,7 @@ unzip master.zip >> log
 echo "Création de l’image ... Cela peut prendre quelques heures en fonction de la connexion"
  
 cd docker-images-master/OracleDatabase/SingleInstance/dockerfiles/
-./buildDockerImage.sh -x -v 18.4.0 >> log
+./buildDockerImage.sh -x -v 18.4.0 2>> log
 cd ../../../..
 pwd
 
